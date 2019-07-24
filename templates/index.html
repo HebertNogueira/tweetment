@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Captura de tweets e analise sentimental.">
+  <meta name="author" content="Hebert Nogueira">
+
+  <title>Tweetment</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="{{url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400" rel="stylesheet" type="text/css">
+  <link href="{{url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="{{url_for('static', filename='css/stylish-portfolio.css')}}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center">
+      <h5 class="mb-5">
+        <img src="{{url_for('static', filename='img/gauge.png')}}"><p>
+        <em>{{result[0]['tt']}} :  <b>{{result[0]['polarity']}}</b></em>
+      </h5>
+      <h2>
+        Captura de tweets e análise sentimental
+      </h2>
+       <h5>
+        Captura de tweets e análise sentimental
+      </h5>
+
+    </div>
+    <div class="overlay"></div>
+  </header>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <img src="{{url_for('static', filename='img/HebertFrancisAmaroNogueira.png')}}">
+      <a href="http://www.linkedin.com/in/hebert-nogueira/"><img src="{{url_for('static', filename='img/linkedin.png')}}"></a>
+      <img src="{{url_for('static', filename='img/github.png')}}">
+    </div>
+    <div class="container">
+      <img src="{{url_for('static', filename='img/FranksFreitas.png')}}">
+      <a href="https://www.linkedin.com/in/franksfreitas/"><img src="{{url_for('static', filename='img/linkedin.png')}}"></a>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{{url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="{{url_for('static', filename='js/stylish-portfolio.min.js')}}"></script>
+
+</body>
+
+</html>
