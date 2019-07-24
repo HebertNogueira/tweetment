@@ -20,6 +20,7 @@ Para o resultado no navegador há um gráfico do resultado da análise produzido
 * Python 3+
 * MongoDB
 
+
 ### Pacotes necessarios
 - [x] pymongo
 - [x] numpy
@@ -30,15 +31,26 @@ Para o resultado no navegador há um gráfico do resultado da análise produzido
 - [x] flask
 - [ ] dnspython - Opcional, caso for usar o MongoDB Atlas, instale.
 
+## ACESSO A API DO TWITTER
+
+Para a ferramenta funcionar corretamente é necessário ter as chaves de acesso a API do __Twitter__, para isto, faça um cadastro em __developer.twitter.com__ e requisite-as, são quatro chaves:
+
+* consumer_key
+* consumer_secret
+* access_token
+* access_token_secret
+
+Coloque-as no arquivo __tweepy_auth.py__.
+
 
 ## EXECUCAO
 
-1. Para iniciar o processo de captura e analise, e necessario chamar o arquivo __ignite.py__ no terminal, este arquivo aceita dois parametros via linha de comando:
+Para iniciar o processo de captura e análise, é necessário chamar o arquivo __ignite.py__ no terminal, este arquivo aceita dois parâmetros via linha de comando:
 
 * __new__ : Para a primeira execucao
-* __INT__ : Qualquer numero inteiro, para indicar quantos tweets serao captados, se nao for indicado sera usado o valor padrao __200__
+* __INT__ : Qualquer número inteiro, para indicar quantos tweets serão captados, se não for indicado será usado o valor padrão __200__
 
-Obrigatoriamente o __new__ deve ser o primeiro, caso queira indicar a quantidade de tweets na primeira execucao.
+Obrigatoriamente o __new__ deve ser o primeiro, caso queira indicar a quantidade de tweets na primeira execução.
 
 #### Exemplos
 
@@ -65,7 +77,7 @@ python3 ignite.py 100
 
 ## VISUALIZACAO
 
-Navegue ate a pasta do projeto e execute o arquivo index.py:
+Navegue até a pasta do projeto e execute o arquivo __index.py__:
 
 ```
 python3 index.py
