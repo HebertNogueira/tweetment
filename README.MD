@@ -1,6 +1,8 @@
 # tweetment
 > Captura de Tweets e análise sentimental
 
+![LOGO-TWEETMENT](https://github.com/HebertNogueira/tweetment/raw/master/static/img/bg-logo-top.jpg)
+
 ## Descrição
 
 Captura de tweets únicos (excluídos da capturas os RTs) do termo #1 nos trending topics com a biblioteca __Tweepy__.
