@@ -2,6 +2,7 @@ from textblob_trendings import TextblobTrendings as tb
 from matplotlib_gauge import MatplotlibGauge as mg
 from tweepy_auth import TweepyAuth as ta
 from connect_mongo import ConnectMongo as cm
+from collection_rename import CollectionRename as cr
 import tweepy
 import json
 import threading
@@ -32,17 +33,7 @@ class CatchTrendings():
 		db = client.twitterCollection
 
 		# Renomeando collection com tweets salvos para backup 
-		count = 0
-		check = False
-		for args in sys.argv:
-			if (len(sys.argv) > 1):
-				if (args == 'new'):
-					check = True
-			if (check == True) or (count >= 1) or (args == 'ignite.py'):
-				pass
-			else:
-				db['tweets'].rename(now)
-				count+=1
+		cr.collectionRename(db,'tweets',now)
 
 		# pegando Trending #1
 		trending = [str(trendingLoad)]
@@ -64,7 +55,7 @@ class CatchTrendings():
 		# metodo para executar em thread e efetuar stop do streaming
 		def catchTweet():
 
-			howmuch = 100
+			howmuch = 200
 			count = 0
 			for args in sys.argv:
 				if (args != 'ignite.py'):

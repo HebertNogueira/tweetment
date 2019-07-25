@@ -1,10 +1,10 @@
 from tweepy_auth import TweepyAuth as ta
 from connect_mongo import ConnectMongo as cm
+from collection_rename import CollectionRename as cr
 from datetime import datetime
 import tweepy
 import json
 import sys
-import time
 
 class Trendings:
 
@@ -21,17 +21,7 @@ class Trendings:
 		db = client.trendings
 
 		# Renomeando BD Antigo
-		count = 0
-		check = False
-		for args in sys.argv:
-			if (len(sys.argv) > 1):
-				if (args == 'new'):
-					check = True
-			if (check == True) or (count >= 1) or (args == 'ignite.py'):
-				pass
-			else:
-				db['trendingTopics'].rename(now)
-				count+=1
+		cr.collectionRename(db,'trendingTopics',now)
 
 		# Requisitando e salvando trending topics
 		# BRAZIL = 23424768
@@ -68,17 +58,7 @@ class Trendings:
 		db = client.trendingsDisplay
 
 		# Renomeando BD Antigo
-		count = 0
-		check = False
-		for args in sys.argv:
-			if (len(sys.argv) > 1):
-				if (args == 'new'):
-					check = True
-			if (check == True) or (count >= 1) or (args == 'ignite.py'):
-				pass
-			else:
-				db['trendingTopicsDisplay'].rename(now)
-				count += 1
+		cr.collectionRename(db,'trendingTopicsDisplay',now)
 
 		response = db.trendingTopicsDisplay.insert_one({'date':now,'tt':trending,'polarity':str(polarity)})
 		return response
