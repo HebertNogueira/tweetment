@@ -29,7 +29,7 @@ Para o resultado no navegador há um gráfico do resultado da análise produzido
 - [x] textblob
 - [x] googletrans
 - [x] flask
-- [ ] dnspython - Opcional, caso for usar o MongoDB Atlas, instale.
+- [ ] dnspython - Opcional, caso for usar o MongoDB Atlas, instale-o.
 
 ## ACESSO A API DO TWITTER
 
@@ -47,14 +47,14 @@ Coloque-as no arquivo __tweepy_auth.py__.
 
 Para iniciar o processo de captura e análise, é necessário chamar o arquivo __ignite.py__ no terminal, este arquivo aceita dois parâmetros via linha de comando:
 
-* __new__ : Para a primeira execucao
+* __new__ : Para a primeira execucao, ou, se por qualquer motivo a captura for interrompida.
 * __INT__ : Qualquer número inteiro, para indicar quantos tweets serão captados, se não for indicado será usado o valor padrão __200__
 
 Obrigatoriamente o __new__ deve ser o primeiro, caso queira indicar a quantidade de tweets na primeira execução.
 
 #### Exemplos
 
-* para a primeira execucao 
+* para a primeira execução: 
 
 ```
 python3 ignite.py new
@@ -65,7 +65,7 @@ python3 ignite.py new 35
 ```
 
 
-* Demais execucoes:
+* Demais execuções:
 
 ```
 python3 ignite.py
@@ -75,7 +75,7 @@ ou
 python3 ignite.py 100
 ```
 
-## VISUALIZACAO
+## VISUALIZAÇÃO
 
 Navegue até a pasta do projeto e execute o arquivo __index.py__:
 
@@ -83,7 +83,9 @@ Navegue até a pasta do projeto e execute o arquivo __index.py__:
 python3 index.py
 ```
 
-Sera iniciado um servidor web local com o __Flask__ no endereco:
+Será iniciado um servidor web local com o __Flask__ no endereço:
 
 http://127.0.0.1
+
+Acesse pelo seu navegador habitual.
 
