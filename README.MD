@@ -21,7 +21,7 @@ Para o resultado no navegador há um gráfico do resultado da análise produzido
 * MongoDB
 
 
-### Pacotes necessarios
+### Pacotes Necessários
 - [x] pymongo
 - [x] numpy
 - [x] tweepy
@@ -43,7 +43,7 @@ Para a ferramenta funcionar corretamente é necessário ter as chaves de acesso 
 Coloque-as no arquivo __tweepy_auth.py__.
 
 
-## EXECUCAO
+## EXECUÇÃO
 
 Para iniciar o processo de captura e análise, é necessário chamar o arquivo __ignite.py__ no terminal, este arquivo aceita dois parâmetros via linha de comando:
 
