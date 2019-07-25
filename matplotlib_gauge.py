@@ -54,6 +54,5 @@ class MatplotlibGauge:
 		ax.axis('equal')
 		plt.tight_layout()
 		if (tweetWord != False):
-			print (os.getcwd())
 			fig.savefig(os.getcwd() + '/static/img/gauge', dpi=100)
 		return tweetWord
