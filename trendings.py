@@ -5,6 +5,7 @@ from datetime import datetime
 import tweepy
 import json
 import sys
+import time
 
 class Trendings:
 
