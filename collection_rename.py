@@ -8,12 +8,15 @@ class CollectionRename():
 		check = False
 		for args in sys.argv:
 			if (len(sys.argv) > 1):
-				if (args == 'new' or args == 'ignite.py'):
-					check = True
+				if (args == 'ignite.py'):
+					pass
+				else:
+					if(args == 'new'):
+						check = True
 		
-			if (check == True) or (count >= 1):
-				check = False
-			else:
-				print ('Collection Rename: ' + collection)
-				db[collection].rename(now)
-				count+=1 
+					if (check == True) or (count >= 1):
+						pass
+					else:
+						print ('Collection Rename: ' + collection)
+						db[collection].rename(now)
+						count+=1 
