@@ -65,10 +65,6 @@ class CatchTrendings():
 						except:
 							pass
 
-				elif (count > 0) and (args == 'new'):
-					if (args != 'new'):
-						check = False
-
 			tweet_list = {}
 			keepGoing = True
 			while (keepGoing == True):
