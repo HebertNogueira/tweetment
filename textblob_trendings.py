@@ -20,9 +20,8 @@ class TextblobTrendings():
 		polarity_result = {}
 		tweet_list = {}
 		count = 0
-		polarity_count = 0
-		polarity_total = 0
-		polarityAverage = 0
+		polarityNegative = 0
+		PolarityPositive = 0
 
 		#Iniciando aalise de sentimentos
 		for tweet in db.tweets.find():
@@ -42,11 +41,11 @@ class TextblobTrendings():
 			# Salvando polaridade no tweet ou deletando se invalido para calculo
 			if polarity_result[count] <= 1 and polarity_result[count] >= -1 and polarity_result[count] != 0:
 				db.tweets.update({'_id':tweet['_id']},{'$set':{'polarity':polarity_result[count]}})
-				polarity_total += polarity_result[count]
-				print('PARCIAL: ' + str(polarity_total))
-				polarity_count += 1
+				print('PARCIAL: ' + str(sum(polarity_result.values())))
+
 			else:
 				db.tweets.delete_many({'_id':tweet['_id']})
+				del(polarity_result[count])
 
 			# Pause na traducao, para nao ser bloqueado pelo Google
 			if count%2==0 and count !=0:
@@ -58,10 +57,12 @@ class TextblobTrendings():
 			count+=1
 
 		# Calculando e arrdondando polaridade media em 2 casas decimais
-		if (polarity_count > 0):
-			polarityAverage = round(polarity_total/polarity_count, 2)
-
-		print('## Total Feelings: ' + str(polarity_count) + ' ==> Average: ' + str(polarityAverage))
+		if (int(sum(polarity_result.values()) > 0)):
+			polarityAverage = round(sum(polarity_result.values())/len(polarity_result), 2)
+		else:
+			polarityAverage = 0
+			
+		print('## Total Feelings: ' + str(len(polarity_result.values())) + ' ==> Average: ' + str(polarityAverage))
 
 		# Salvando resultado da analise
 		tt.updateTrending(now,trending,polarityAverage)
