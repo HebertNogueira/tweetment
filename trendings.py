@@ -54,12 +54,12 @@ class Trendings:
 		return result[0]
 
 	#Salvando polaridade no db
-	def updateTrending(now,trending,polarity):
+	def updateTrending(now,trending,total,polarity,positive_total,positive,negative_total,negative):
 		client = cm.connectMongo()
 		db = client.trendingsDisplay
 
 		# Renomeando BD Antigo
 		cr.collectionRename(db,'trendingTopicsDisplay',now)
 
-		response = db.trendingTopicsDisplay.insert_one({'date':now,'tt':trending,'polarity':str(polarity)})
+		response = db.trendingTopicsDisplay.insert_one({'date':now,'tt':trending,'total':total,'polarity':polarity,'positive_total':positive_total,'positive':positive,'negative_total':negative_total,'negative':negative})
 		return response
