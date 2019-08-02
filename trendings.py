@@ -21,9 +21,6 @@ class Trendings:
 		client = cm.connectMongo()
 		db = client.trendings
 
-		# Renomeando BD Antigo
-		cr.collectionRename(db,'trendingTopics',now)
-
 		# Requisitando e salvando trending topics
 		# BRAZIL = 23424768
 		# WORLD = 1
@@ -57,9 +54,6 @@ class Trendings:
 	def updateTrending(now,trending,total,polarity,positive_total,positive,negative_total,negative):
 		client = cm.connectMongo()
 		db = client.trendingsDisplay
-
-		# Renomeando BD Antigo
-		cr.collectionRename(db,'trendingTopicsDisplay',now)
-
+		db.trendingTopicsDisplay.drop()
 		response = db.trendingTopicsDisplay.insert_one({'date':now,'tt':trending,'total':total,'polarity':polarity,'positive_total':positive_total,'positive':positive,'negative_total':negative_total,'negative':negative})
 		return response

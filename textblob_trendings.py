@@ -72,7 +72,9 @@ class TextblobTrendings():
 
 		print(' ')
 		print('########################################')
-		print('## Total Feelings: ' + str(len(polarity_result)) + ' ==> Average: ' + str(average(polarity_result)))
+		print('## Trending Topic: ' + trending)
+		print('## Timestamp: ' + now)
+		print('## Total: ' + str(len(polarity_result)) + ' ==> Average: ' + str(average(polarity_result)))
 		print('## Positive: ' + str(len(polarityPositive)) + ' ==> Average: ' + str(average(polarityPositive)))
 		print('## Negative: ' + str(len(polarityNegative)) + ' ==> Average: ' + str(average(polarityNegative)))
 		print('########################################')

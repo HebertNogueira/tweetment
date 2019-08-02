@@ -32,9 +32,6 @@ class CatchTrendings():
 		client = cm.connectMongo()
 		db = client.twitterCollection
 
-		# Renomeando collection com tweets salvos para backup 
-		cr.collectionRename(db,'tweets',now)
-
 		# pegando Trending #1
 		trending = [str(trendingLoad)]
 
@@ -50,7 +47,15 @@ class CatchTrendings():
 			textblob = tb.sentimentCheck(now,trendingLoad)
 
 			#Gerando imagem do gauge
-			print(str(mg.gauge(polarity=textblob, tweetWord=str(trendingLoad))))
+			mg.gauge(polarity=textblob, tweetWord=str(trendingLoad))
+
+			# Renomeando collection com tweets salvos para backup 
+			db = client.twitterCollection
+			cr.collectionRename(db,'tweets',now)
+
+			# Renomeando collection com TT salvos para backup
+			db = client.trendings
+			cr.collectionRename(db,'trendingTopics',now)
 
 		# metodo para executar em thread e efetuar stop do streaming
 		def catchTweet():
