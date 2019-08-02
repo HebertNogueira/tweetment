@@ -6,8 +6,7 @@ class Initial():
 	def doit():
 
 		# Salvando data para renomear BD apos analise.
-		dt = datetime.now()
-		now = str(dt.day) + '_' + str(dt.month) + '_' + str(dt.year) + '_' + str(dt.hour) + '_' + str(dt.minute) + '_' + str(dt.second)
+		now = str(format(datetime.now(), "%d_%m_%Y_%H_%M_%S"))
 
 		#Pega os TTs
 		tt.trendingCheck(now)
