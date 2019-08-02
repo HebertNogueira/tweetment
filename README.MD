@@ -29,6 +29,7 @@ Para o resultado no navegador há um gráfico do resultado da análise produzido
 - [x] textblob
 - [x] googletrans
 - [x] flask
+- [x] unidecode
 - [ ] dnspython - Opcional, caso for usar o MongoDB Atlas, instale-o.
 
 ## ACESSO A API DO TWITTER
